@@ -1,0 +1,8 @@
+c:\users\user\documents\visual studio 2017\Projects\QueryStringMain\QueryStringMain\bin\Debug\QueryStringMain.exe.config
+c:\users\user\documents\visual studio 2017\Projects\QueryStringMain\QueryStringMain\bin\Debug\QueryStringMain.exe
+c:\users\user\documents\visual studio 2017\Projects\QueryStringMain\QueryStringMain\bin\Debug\QueryStringMain.pdb
+c:\users\user\documents\visual studio 2017\Projects\QueryStringMain\QueryStringMain\bin\Debug\QueryStringHandler.dll
+c:\users\user\documents\visual studio 2017\Projects\QueryStringMain\QueryStringMain\bin\Debug\QueryStringHandler.pdb
+c:\users\user\documents\visual studio 2017\Projects\QueryStringMain\QueryStringMain\obj\Debug\QueryStringMain.csprojResolveAssemblyReference.cache
+c:\users\user\documents\visual studio 2017\Projects\QueryStringMain\QueryStringMain\obj\Debug\QueryStringMain.exe
+c:\users\user\documents\visual studio 2017\Projects\QueryStringMain\QueryStringMain\obj\Debug\QueryStringMain.pdb

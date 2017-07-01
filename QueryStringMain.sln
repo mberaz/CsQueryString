@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryStringMain", "QueryStringMain\QueryStringMain.csproj", "{F5E657B5-1285-4E91-A4AC-6DB08980BAF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryStringHandler", "QueryStringHandler\QueryStringHandler.csproj", "{27D4A62A-EC20-4E98-9EEF-DE56869ABCDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5E657B5-1285-4E91-A4AC-6DB08980BAF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5E657B5-1285-4E91-A4AC-6DB08980BAF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5E657B5-1285-4E91-A4AC-6DB08980BAF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5E657B5-1285-4E91-A4AC-6DB08980BAF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27D4A62A-EC20-4E98-9EEF-DE56869ABCDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27D4A62A-EC20-4E98-9EEF-DE56869ABCDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27D4A62A-EC20-4E98-9EEF-DE56869ABCDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27D4A62A-EC20-4E98-9EEF-DE56869ABCDF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
