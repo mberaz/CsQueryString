@@ -49,7 +49,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\QueryStringHandler\QueryStringHandler.csproj">
+    <ProjectReference Include="..\CSQueryStringHandler\QueryStringHandler.csproj">
       <Project>{27d4a62a-ec20-4e98-9eef-de56869abcdf}</Project>
       <Name>QueryStringHandler</Name>
     </ProjectReference>

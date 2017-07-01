@@ -6,3 +6,11 @@ c:\users\user\documents\visual studio 2017\Projects\QueryStringMain\QueryStringM
 c:\users\user\documents\visual studio 2017\Projects\QueryStringMain\QueryStringMain\obj\Debug\QueryStringMain.csprojResolveAssemblyReference.cache
 c:\users\user\documents\visual studio 2017\Projects\QueryStringMain\QueryStringMain\obj\Debug\QueryStringMain.exe
 c:\users\user\documents\visual studio 2017\Projects\QueryStringMain\QueryStringMain\obj\Debug\QueryStringMain.pdb
+C:\Users\User\Documents\Visual Studio 2017\Projects\CsQueryString\QueryStringMain\bin\Debug\QueryStringMain.exe.config
+C:\Users\User\Documents\Visual Studio 2017\Projects\CsQueryString\QueryStringMain\bin\Debug\QueryStringMain.exe
+C:\Users\User\Documents\Visual Studio 2017\Projects\CsQueryString\QueryStringMain\bin\Debug\QueryStringMain.pdb
+C:\Users\User\Documents\Visual Studio 2017\Projects\CsQueryString\QueryStringMain\bin\Debug\QueryStringHandler.dll
+C:\Users\User\Documents\Visual Studio 2017\Projects\CsQueryString\QueryStringMain\bin\Debug\QueryStringHandler.pdb
+C:\Users\User\Documents\Visual Studio 2017\Projects\CsQueryString\QueryStringMain\obj\Debug\QueryStringMain.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2017\Projects\CsQueryString\QueryStringMain\obj\Debug\QueryStringMain.exe
+C:\Users\User\Documents\Visual Studio 2017\Projects\CsQueryString\QueryStringMain\obj\Debug\QueryStringMain.pdb

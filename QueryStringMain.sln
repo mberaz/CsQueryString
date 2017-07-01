@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryStringMain", "QueryStringMain\QueryStringMain.csproj", "{F5E657B5-1285-4E91-A4AC-6DB08980BAF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryStringHandler", "QueryStringHandler\QueryStringHandler.csproj", "{27D4A62A-EC20-4E98-9EEF-DE56869ABCDF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryStringHandler", "CSQueryStringHandler\QueryStringHandler.csproj", "{27D4A62A-EC20-4E98-9EEF-DE56869ABCDF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
