@@ -11,6 +11,7 @@ namespace QueryStringMain
     {
         //https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package
         //https://docs.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package
+        //https://github.com/NuGetPackageExplorer/NuGetPackageExplorer/blob/master/README.md
         static void Main(string[] args)
         {
             var url = "htp://www.test.com?firstname=name&lastname=last&lastname=name";

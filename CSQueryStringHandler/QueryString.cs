@@ -26,7 +26,7 @@ namespace QueryStringHandler
         /// <returns></returns>
         public string RetunrQueryString(Func<KeyValuePair<string, string>, string> parseMethod = null, bool preffixQuestionMark = true)
         {
-            var list = data.Select(pair => parseMethod== null? $"{pair.Key}={pair.Value}" :parseMethod(pair) ).ToList();
+            var list = data.Select(pair => parseMethod == null ? $"{pair.Key}={pair.Value}" : parseMethod(pair)).ToList();
 
             return (preffixQuestionMark ? "?" : string.Empty) + string.Join("&", list);
         }
@@ -225,6 +225,10 @@ namespace QueryStringHandler
 
         #endregion
 
+        public Dictionary<string, string> GetQueryStringParams()
+        {
+            return data;
+        }
 
         /// <summary>
         /// returns the value of a QueryString key
@@ -273,7 +277,8 @@ namespace QueryStringHandler
         private string GetQueryStringValue(string key)
         {
             return data.ContainsKey(key) ? data[key] : null;
-        }private static void InsertKey(Dictionary<string, string> data, string key, string value, DuplicateKeyMode duplicateValueMode)
+        }
+        private static void InsertKey(Dictionary<string, string> data, string key, string value, DuplicateKeyMode duplicateValueMode)
         {
             if (data.ContainsKey(key))
             {
