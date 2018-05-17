@@ -15,6 +15,7 @@ var qs = new QueryString(url, DuplicateKeyMode.Concat);
 then you can change the query string values:
 qs.InsertOrConcat("con", "first").InsertOrConcat("con", "last");
 qs.UpdateValue("updateKey", "updateValue");
+
 qs.DeleteKey("firstname").RenameKey("lastname", "last");
  
 returnUrl = qs.RetunrQueryString();
