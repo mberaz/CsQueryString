@@ -266,7 +266,7 @@ namespace QueryStringHandler
             {
                 var paramParts = qsParam.Split("=".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
                 var key = paramParts[0];
-                var value = paramParts[1];
+                var value = paramParts.Length == 2 ? paramParts[1] : string.Empty;
                 InsertKey(data, key, value, duplicateValueMode);
             }
 
