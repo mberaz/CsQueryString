@@ -1,6 +1,9 @@
 this is a simple to handle query strings in c#
 
-to start add the using QueryStringHandler;
+(if you need to to this in JS, check out the cs version at https://github.com/mberaz/JsQueryString)
+
+to start add the following using to start of the file:
+using QueryStringHandler;
 
 you can use it in static mode just like this
 
