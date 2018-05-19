@@ -1,5 +1,5 @@
 this is a simple to handle query strings in c#
-
+you can get this as a nuget: https://www.nuget.org/packages/CsQueryString
 (if you need to to this in JS, check out the cs version at https://github.com/mberaz/JsQueryString)
 
 to start add the following using to start of the file:
