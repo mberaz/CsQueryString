@@ -23,3 +23,10 @@ qs.UpdateValue("updateKey", "updateValue");
 qs.DeleteKey("firstname").RenameKey("lastname", "last");
  
 returnUrl = qs.RetunrQueryString();
+
+
+if you need to create a query string form params:
+ you can create a Dictionary<string,string> to hold the data and use the following method
+
+ var queryStringWithAQuestionMark = QueryString.CreateQueryString(data);
+ var queryStringWithOutAQuestionMark = QueryString.CreateQueryString(data,false);
