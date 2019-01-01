@@ -14,11 +14,15 @@ namespace QueryStringMain
         //https://github.com/NuGetPackageExplorer/NuGetPackageExplorer/blob/master/README.md
         static void Main(string[] args)
         {
+
             var url = "htp://www.test.com?firstname=name&lastname=last&lastname=name";
 
             var concat = QueryString.ParseQueryString(url, DuplicateKeyMode.Concat);
             var replace = QueryString.ParseQueryString(url, DuplicateKeyMode.Replase);
             var keep = QueryString.ParseQueryString(url, DuplicateKeyMode.KeepOld);
+
+            var queryStringWithAQuestionMark = QueryString.CreateQueryString(concat);
+            var queryStringWithOutAQuestionMark = QueryString.CreateQueryString(concat,false);
 
             var qs = new QueryString(url, DuplicateKeyMode.Concat);
 
