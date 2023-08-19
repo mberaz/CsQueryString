@@ -1,17 +1,10 @@
 ﻿using QueryStringHandler;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QueryStringMain
 {
     class Program
     {
-        //https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package
-        //https://docs.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package
-        //https://github.com/NuGetPackageExplorer/NuGetPackageExplorer/blob/master/README.md
         static void Main(string[] args)
         {
 
@@ -26,27 +19,24 @@ namespace QueryStringMain
 
             var qs = new QueryString(url, DuplicateKeyMode.Concat);
 
-            var returnUrl = qs.RetunrQueryString();
+            var returnUrl = qs.ReturnQueryString();
 
             var value = QueryString.GetQueryStringValue(url, "firstname");
-
+            var firstName = qs.GetValue("firstname");
 
             qs.InsertOrConcat("con", "first").InsertOrConcat("con", "last");
 
-            qs.InsertOrReplase("replase", "first").InsertOrReplase("replase", "last");
+            qs.InsertOrReplace("replace", "first").InsertOrReplace("replace", "last");
 
             qs.InsertOrKeepOld("keep", "first").InsertOrKeepOld("keep", "last");
             qs.DeleteKey("firstname").RenameKey("lastname", "last");
 
-            qs.InsertOrReplase("up", "down").UpdateValue("up", "up", DuplicateKeyMode.Replase);
+            qs.InsertOrReplace("up", "down").UpdateValue("up", "up", DuplicateKeyMode.Replase);
 
 
-            returnUrl = qs.RetunrQueryString();
+            returnUrl = qs.ReturnQueryString();
 
-            var testReturn = qs.RetunrQueryString((pair) =>
-             {
-                 return $"{pair.Key}={ ReverseString (pair.Value)}";
-             });
+            var testReturn = qs.ReturnQueryString((pair) => $"{pair.Key}={ ReverseString (pair.Value)}");
 
             Console.Read();
         }
