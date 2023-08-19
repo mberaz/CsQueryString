@@ -11,10 +11,9 @@ namespace QueryStringHandler
         /// Creates a new QueryString object
         /// </summary>
         /// <param name="url">a string the represents a URL</param>
-        /// <param name="duplicateValueMode">an enum, manages how duplicated key should be handled (concat values, replase old values, keep old values)</param>
-        public QueryString(string url, DuplicateKeyMode duplicateValueMode = DuplicateKeyMode.Concat)
+        public QueryString(string url)
         {
-            _data = ParseQueryString(url, duplicateValueMode);
+            _data = ParseQueryString(url);
         }
 
         /// <summary>
@@ -44,80 +43,33 @@ namespace QueryStringHandler
         }
 
         #region insert
+      
         /// <summary>
-        /// Inserts a new key to the QueryString, if the key is already exists the value is concated to the old value 
+        /// Inserts a new key to the QueryString, if the key is already exists the old value is replaced by the new value
         /// </summary>
         /// <param name="key">the key that we want insert</param>
         /// <param name="value">the value that we want to insert</param>
         /// <returns></returns>
-        public QueryString InsertOrConcat(string key, string value)
+        public QueryString Insert(string key, string value)
         {
-            InsertKey(_data, key, value, DuplicateKeyMode.Concat);
+            InsertKey(_data, key, value);
             return this;
         }
+      
         /// <summary>
-        /// Inserts a new key to the QueryString, if the key is already exists the old value is relased by the new value
-        /// </summary>
-        /// <param name="key">the key that we want insert</param>
-        /// <param name="value">the value that we want to insert</param>
-        /// <returns></returns>
-        public QueryString InsertOrReplace(string key, string value)
-        {
-            InsertKey(_data, key, value, DuplicateKeyMode.Replase);
-            return this;
-        }
-        /// <summary>
-        /// Inserts a new key to the QueryString, if the key is already exists the old value is kept
-        /// </summary>
-        /// <param name="key">the key that we want insert</param>
-        /// <param name="value">the value that we want to insert</param>
-        /// <returns></returns>
-        public QueryString InsertOrKeepOld(string key, string value)
-        {
-            InsertKey(_data, key, value, DuplicateKeyMode.KeepOld);
-            return this;
-        }
-
-        /// <summary>
-        /// Inserts several new keys to the QueryString, if a key is already exists the value is concated to the old value
+        /// Inserts several new keys to the QueryString, if a key is already exists the old value is replaced by the new value
         /// </summary>
         /// <param name="paramList">a list of key value pairs</param>
         /// <returns></returns>
-        public QueryString InsertOrConcat(Dictionary<string, string> paramList)
+        public QueryString Insert(Dictionary<string, string> paramList)
         {
             foreach (var item in paramList)
             {
-                InsertOrConcat(item.Key, item.Value);
-            }
-            return this;
-
-        }
-        /// <summary>
-        /// Inserts several new keys to the QueryString, if a key is already exists the old value is relased by the new value
-        /// </summary>
-        /// <param name="paramList">a list of key value pairs</param>
-        /// <returns></returns>
-        public QueryString InsertOrReplace(Dictionary<string, string> paramList)
-        {
-            foreach (var item in paramList)
-            {
-                InsertOrReplace(item.Key, item.Value);
+                Insert(item.Key, item.Value);
             }
             return this;
         }
-        /// <summary>
-        /// Inserts several new keys to the QueryString, if a key is already exists the old value is kept
-        /// </summary>
-        /// <param name="paramList">a list of key value pairs</param>
-        /// <returns></returns>
-        public QueryString InsertOrKeepOld(Dictionary<string, string> paramList)
-        {
-            foreach (var item in paramList)
-            {
-                InsertOrKeepOld(item.Key, item.Value);
-            }
-            return this;
-        }
+      
         #endregion
 
         #region delete
@@ -190,46 +142,23 @@ namespace QueryStringHandler
         /// <param name="value">the new value</param>
         /// <param name="duplicateValueMode">an enum, manages how duplicated key should be handeled (concat value, replase old value, keep old value)</param>
         /// <returns></returns>
-        public QueryString UpdateValue(string key, string value, DuplicateKeyMode duplicateValueMode = DuplicateKeyMode.Concat)
+        public QueryString UpdateValue(string key, string value )
         {
-            UpdateKeyValue(_data, key, value, duplicateValueMode);
+            UpdateKeyValue(_data, key, value);
             return this;
         }
-        /// <summary>
-        /// concats a new value to an exsiting value
-        /// </summary>
-        /// <param name="key">the key whos value we want to update</param>
-        /// <param name="value">the new value</param>
-        /// <returns></returns>
-        public QueryString ConcatValue(string key, string value)
-        {
-            UpdateKeyValue(_data, key, value, DuplicateKeyMode.Concat);
-            return this;
-        }
-
-        /// <summary>
-        /// replases a QueryString value
-        /// </summary>
-        /// <param name="key">the key whos value we want to update</param>
-        /// <param name="value">the new value</param>
-        /// <returns></returns>
-        public QueryString ReplaceValue(string key, string value)
-        {
-            UpdateKeyValue(_data, key, value, DuplicateKeyMode.Replase);
-            return this;
-        }
-
+        
         /// <summary>
         /// updates the values of severl key at once
         /// </summary>
         /// <param name="paramList">Key is the the param key, Value is the new value</param>
         /// <param name="duplicateValueMode">an enum, manages how duplicated key should be handeled (concat value, replase old value, keep old value)</param>
         /// <returns></returns>
-        public QueryString UpdateValue(Dictionary<string, string> paramList, DuplicateKeyMode duplicateValueMode = DuplicateKeyMode.Concat)
+        public QueryString UpdateValue(Dictionary<string, string> paramList )
         {
             foreach (var item in paramList)
             {
-                UpdateValue(item.Key, item.Value, duplicateValueMode);
+                UpdateValue(item.Key, item.Value );
             }
 
             return this;
@@ -250,12 +179,12 @@ namespace QueryStringHandler
         /// <returns></returns>
         public static string GetQueryStringValue(string url, string key)
         {
-            var data = ParseQueryString(url, DuplicateKeyMode.Concat);
+            var data = ParseQueryString(url );
             var hasValue = data.TryGetValue(key, out var value);
             return hasValue ? value : null;
         }
 
-        public static Dictionary<string, string> ParseQueryString(string url, DuplicateKeyMode duplicateValueMode = DuplicateKeyMode.Concat)
+        public static Dictionary<string, string> ParseQueryString(string url )
         {
             var data = new Dictionary<string, string>();
 
@@ -279,7 +208,7 @@ namespace QueryStringHandler
                 var paramParts = qsParam.Split("=".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
                 var key = paramParts[0];
                 var value = paramParts.Length == 2 ? paramParts[1] : string.Empty;
-                InsertKey(data, key, value, duplicateValueMode);
+                InsertKey(data, key, value);
             }
 
             return data;
@@ -293,11 +222,11 @@ namespace QueryStringHandler
 
         #region Private
 
-        private static void InsertKey(Dictionary<string, string> data, string key, string value, DuplicateKeyMode duplicateValueMode)
+        private static void InsertKey(Dictionary<string, string> data, string key, string value)
         {
             if (data.ContainsKey(key))
             {
-                UpdateKeyValue(data, key, value, duplicateValueMode);
+                UpdateKeyValue(data, key, value);
             }
             else
             {
@@ -305,22 +234,9 @@ namespace QueryStringHandler
             }
         }
 
-        private static void UpdateKeyValue(Dictionary<string, string> data, string key, string value, DuplicateKeyMode duplicateValueMode)
+        private static void UpdateKeyValue(Dictionary<string, string> data, string key, string value)
         {
-            switch (duplicateValueMode)
-            {
-                case DuplicateKeyMode.Concat:
-                    data[key] += "," + value;
-                    break;
-                case DuplicateKeyMode.Replase:
-                    data[key] = value;
-                    break;
-                case DuplicateKeyMode.KeepOld:
-                    //do nothing, old value remains
-                    break;
-                default:
-                    break;
-            }
+            data[key] = value;
         }
 
         private static string DecodeUrlString(string url)

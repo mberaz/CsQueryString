@@ -35,7 +35,6 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DuplicateKeyMode.cs" />
     <Compile Include="QueryString.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

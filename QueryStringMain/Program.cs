@@ -10,29 +10,23 @@ namespace QueryStringMain
 
             var url = "htp://www.test.com?firstname=name&lastname=last&lastname=name";
 
-            var concat = QueryString.ParseQueryString(url, DuplicateKeyMode.Concat);
-            var replace = QueryString.ParseQueryString(url, DuplicateKeyMode.Replase);
-            var keep = QueryString.ParseQueryString(url, DuplicateKeyMode.KeepOld);
+            var concat = QueryString.ParseQueryString(url);
 
             var queryStringWithAQuestionMark = QueryString.CreateQueryString(concat);
             var queryStringWithOutAQuestionMark = QueryString.CreateQueryString(concat,false);
 
-            var qs = new QueryString(url, DuplicateKeyMode.Concat);
+            var qs = new QueryString(url);
 
             var returnUrl = qs.ReturnQueryString();
 
             var value = QueryString.GetQueryStringValue(url, "firstname");
             var firstName = qs.GetValue("firstname");
 
-            qs.InsertOrConcat("con", "first").InsertOrConcat("con", "last");
+            qs.Insert("replace", "first").Insert("replace", "last");
 
-            qs.InsertOrReplace("replace", "first").InsertOrReplace("replace", "last");
-
-            qs.InsertOrKeepOld("keep", "first").InsertOrKeepOld("keep", "last");
             qs.DeleteKey("firstname").RenameKey("lastname", "last");
 
-            qs.InsertOrReplace("up", "down").UpdateValue("up", "up", DuplicateKeyMode.Replase);
-
+            qs.Insert("up", "down").UpdateValue("up", "up");
 
             returnUrl = qs.ReturnQueryString();
 
